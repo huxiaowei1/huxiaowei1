@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>伪对象选择器</title>
+        <style type="text/css">
+        	*{
+        		margin:0;
+        		padding:0;
+        	}
+             body{
+                margin:0;
+                padding:0;
+                font-family:'微软雅黑';
+                background-color:#f7f7f7;
+            }
+            a{
+                color:#333;
+                font-size:24px;
+                text-decoration:none;
+            }
+            ul{
+                list-style-type:none;
+                width:760px;
+                margin:0 auto;
+                margin-top:100px;
+            }
+            ul li{
+                height:100px;
+                width:100px;
+                line-height:100px;
+                text-align:center;
+                float:left;
+               /*  border: 1px solid #ccc; */              
+                margin-left:-1px;
+                margin-top:-1px;             
+                /*bd+    按tab键盘*/
+                border: 1px solid #ccc;
+            }
+            
+            
+            /*选择第一个元素*/
+              /*ul li:first-child{    
+                background:red;
+            } */
+           
+            /*选择最后一个元素*/
+            /*ul li:last-child{    
+                background:blue;
+            } */
+            
+            /*选择指定的元素*/
+            /*ul li:nth-child(5){   
+                color:red;
+                background: green;
+            }*/
+           
+           	/* 奇数 */
+            /*ul li:nth-child(2n+1){   
+                color:red;
+                font-size:32px;
+                background: black;
+            }*/
+            
+            /* 偶数 */
+            /*ul li:nth-child(2n){   
+                color:red;
+                font-size:32px;
+                background: pink;
+            }*/
+
+            /*奇数行*/ 
+            /*ul li:nth-child(odd){                    
+                
+                font-size: 32px;
+                background: black;
+            } */
+
+            /*偶数行*/ 
+            /*ul li:nth-child(even){                    
+                background:pink;
+            } */
+
+
+        	/*偶数行  可以通过nth-child(2n)*/
+            /*ul li:nth-child(2n){                    
+                background:blue;
+            } */
+
+            /*ul li:nth-child(3n){                    
+                background:blue;
+                font-size:32px;
+            }*/
+
+            /*ul li:nth-last-child(5){                    
+                background:red;
+                font-size: 40px;
+            }*/
+
+            /*ul li:nth-last-child(5){                    
+                background:red;
+            }*/
+
+            /*ul li:nth-last-child(8){                    
+                background:red;
+            }
+
+            ul li:nth-last-child(2n){                    
+                background:blue;
+                font-size: 50px;
+            }*/
+
+            /*ul li:first-of-type{                    
+                background:green;
+                font-size: 100px;
+            }*/
+
+            /*ul li:last-of-type{                    
+                background:green;
+                font-size: 100px;
+            }*/
+           
+           /*ul li:nth-of-type(2){                    
+                background:green;
+                font-size: 100px;
+            }
+            
+            ul li:nth-last-of-type(2){                    
+                background:green;
+                font-size: 100px;
+            }*/
+           
+           
+            /*ul li:empty {
+           	   background: #000000;
+            }
+            */
+            :root{                    
+                background:yellow;
+            }
+           
+           /*
+            * first-child   父元素的第一个子元素，位置要放在第一位
+            * first-of-type  同标签的第一个，位置不限
+            */
+           
+           /*.content p:first-of-type {                    
+                background:green;
+                font-size: 100px;
+            }*/
+            
+            /*.content p:nth-of-type(2) {                    
+                background:yellow;
+                font-size: 100px;
+            }*/
+            
+            /*.content p:nth-last-of-type(2) {                    
+                background:yellow;
+                font-size: 100px;
+            }*/
+
+        </style>   
+    </head>
+    
+    <body>
+     
+      <div class="content">
+
+        <ul class="ul1">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li></li>
+            <li>30</li>
+            <li>31</li>
+            <li>32</li>
+            <li>33</li>
+            <li>34</li>
+            <li></li>
+        </ul>
+
+        
+        <!--<div class="content">
+			<span> asfjsakfj  </span>
+			<div>sadjsafj</div>
+        	<p>aaaaa</p>
+        	<p>bbbbb</p>
+        	<p>ccccc</p>
+        	<div>sdff</div>
+        </div>-->
+                  
+      </div>
+    </body>
+</html>

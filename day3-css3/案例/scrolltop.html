@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>楼梯</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#LoutiNav {
+				width: 32px;
+				position: fixed;
+				top: 150px;
+				left: 50px;
+				border: 1px solid #ddd;
+				display: none;
+			}
+			#LoutiNav ul li {
+				width: 32px;
+				height: 32px;
+				border-bottom: 1px dotted #DDDDDD;
+				list-style: none;
+				font-size: 12px;
+				color: #666;
+				text-align: center;
+				line-height: 32px;
+				position: relative;
+				cursor: pointer;
+			}
+			#LoutiNav ul li span {
+				width: 32px;
+				height: 32px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			#LoutiNav ul li span {
+				display: none;
+			}
+			#LoutiNav ul li.last {
+				background: #C00;
+				color: #fff;
+				border-bottom: 1px solid #ddd;
+			}
+			#LoutiNav ul li.hover span {
+				background: #c00;
+				color: #fff;
+				display: block;
+			}
+			#LoutiNav ul li.hover span.active {
+				background: #c00;
+				color: #fff;
+				display: block;
+			}
+			#LoutiNav ul li span.active {
+				background: #fff;
+				color: #c00;
+				display: block;
+			}
+			#header {
+				width: 1000px;
+				height: 1000px;
+				background: #cc6633;
+				margin: 0 auto;
+			}
+			#main {
+				width: 1000px;
+				background: #66ff66;
+				margin: 0 auto;
+			}
+			#main .Louti {
+				
+				height: 600px;
+				width: 1000px;
+				font-size: 50px;
+				color: #fff;
+				font-weight: bold;
+				text-align: center;
+				line-height: 600px;
+			}
+			#footer {
+				width: 1000px;
+				height: 400px;
+				background: red;
+				margin: 0 auto;
+			}
+		</style>
+		<script src="js/jquery-1.12.0.js"></script>
+		<script>
+//		$(function () {
+//		/* 
+//			 * 绑定window的scroll事件
+//			 * 判断是否超过第一屏，此时出现小火箭
+//			 * 点击回到顶部，小火箭通过定时器切换背景图模拟喷火状
+//			 * 到达顶部埋标记，区别正常回顶还是点击小火箭回顶
+//			 */
+//			
+//			// 获取元素， #scrollTop, level2, level3
+//			var $scrollTop = $('#scrollTop');
+//			var $level2 = $('.level-2');
+//			var $level3 = $('.level-3');
+//
+//			var i, timer = null;
+//			
+//			// 获取窗口的高度
+//			var winHeight = $(window).height();
+//			
+//			// 绑定window的scroll事件
+//			$(window).on('scroll', function () {
+//				
+//				var scrollTop = $(window).scrollTop();
+//				
+//				// 超出第一屏出现
+//				if (scrollTop >= winHeight) {
+//					$scrollTop.show();
+//				} else {
+//					// 火箭标记为0和leve2的样式不是显示时
+//					if (i == 0 || $level2.css('display') != 'block' ){
+//						// scrollTop隐藏
+//						$scrollTop.hide();
+//					}
+//				}
+//				
+//				// 回到顶部, 判断是否等于0
+//				if (scrollTop == 0) {
+//					
+//					// scrollTop回到第一张图片
+//					$scrollTop.css("background-position", "0px 0px");
+//					
+//					//动画，延迟0.1秒执行，元素marginTop
+//					$scrollTop.delay(100).animate({marginTop: "-1000px"},"normal",function() {
+//						
+//						//回调后样式重置为-125，隐藏
+//						$(this).css({
+//							"margin-top": "-125px",
+//							"display": "none"
+//						})
+//						// 返回操作标记i为0
+//						i = 0;
+//					})
+//					
+//					
+//				}
+//				
+//			})
+//			
+//			// 鼠标一上去渐显
+//			$scrollTop.on('mouseover', function () {
+//				$level2.animate({opacity: 1}).show();
+//			}).on('mouseout', function () {
+//				$level2.animate({opacity: 0});
+//			})
+//			
+//			// 点击第三层
+//			$level3.on('click', function () {
+//				i = !0; // 让定时器重新运行
+//				
+//				// 定时器函数
+//				timer = function () {
+//					
+//					//声明一个t为背景定位的值
+//					var t = $scrollTop.css('background-position');
+//					
+//					// 判断是否到顶， display:none, i = 0;
+//					if ($scrollTop.css('display') == 'none' || i == 0) {
+//						clearInterval(timer); // 清除定时器
+//						
+//						// 回到第一张位置
+//						$scrollTop.css('background-position', '0px 0px');
+//						
+//						// 终止
+//						return;
+//					}
+//					
+//					// 火箭的背景图切换，模拟喷火状
+//					switch (t) {
+//						case '0px 0px':
+//						$scrollTop.css('background-position', '-298px 0px');
+//						break;
+//						case '-298px 0px':
+//						$scrollTop.css('background-position', '-447px 0px');
+//						break;
+//						case '-447px 0px':
+//						$scrollTop.css('background-position', '-596px 0px');
+//						break;
+//						case '-596px 0px':
+//						$scrollTop.css('background-position', '-745px 0px');
+//						break;
+//						case '-745px 0px':
+//						$scrollTop.css('background-position', '-298px 0px');
+//						break;
+//					}
+//				}
+//				
+//				setInterval (timer, 50); // 设置定时换背景图
+//				
+//				// 滚动条回到顶部
+//				$('body, html').animate({scrollTop: 0}, 'slow');
+//			})
+//			
+//		})
+//		</script>
+	</head>
+
+	<body>
+		<div id="LoutiNav">
+			<ul>
+				<li class="hover">1F <span>服饰</span> </li>
+				<li>2F <span>美妆</span> </li>
+				<li>3F <span>手机</span> </li>
+				<li>4F <span>家电</span> </li>
+				<li>5F <span>数码</span> </li>
+				<li>6F <span>运动</span> </li>
+				<li>7F <span>居家</span> </li>
+				<li>8F <span>母婴</span> </li>
+				<li>9F <span>食品</span> </li>
+				<li>10F <span>图书</span> </li>
+				<li>11F <span>服务</span> </li>
+				<li class="last">Top</li>
+			</ul>
+		</div>
+
+		<!--楼层内容开始-->
+
+		<div id="header">
+
+		</div>
+		<div id="main">
+			<div class="Louti" style="background: #cc0033;">
+				服饰
+			</div>
+			<div class="Louti" style="background: #999933;">
+				美妆
+			</div>
+			<div class="Louti" style="background: #ccff33;">
+				手机
+			</div>
+			<div class="Louti" style="background: #006633;">
+				家电
+			</div>
+			<div class="Louti" style="background: #6666cc;">
+				数码
+			</div>
+			<div class="Louti" style="background: #ff6600;">
+				运动
+			</div>
+			<div class="Louti" style="background: #ffff00;">
+				居家
+			</div>
+			<div class="Louti" style="background: #3333ff;">
+				母婴
+			</div>
+			<div class="Louti" style="background: #ff00cc;">
+				食品
+			</div>
+			<div class="Louti" style="background: #669900;">
+				图书
+			</div>
+			<div class="Louti" style="background: #ff66cc;">
+				服务
+			</div>
+
+		</div>
+		<div id="footer">
+
+		</div>
+		<!--楼层内容结束-->
+		
+		<style>
+		#scrollTop{
+			background: url(images/rocket.png) no-repeat scroll 0 0 transparent;
+		    cursor: default;
+		    display: block;
+		    height: 250px;
+		    overflow: hidden;
+		    position: fixed;
+		    right: 0;
+		    top: 80%;
+		    width: 149px;
+		    z-index: 99;
+		    margin: -125px 0 0;
+		    padding: 0;
+		    display: none;
+		}
+		#scrollTop div {
+		    left: 0;
+		    overflow: hidden;
+		    position: absolute;
+		    top: 0;
+		    width: 149px;
+		    margin: 0;
+		    padding: 0;
+		}
+		#scrollTop .level-2 {
+		    background: url(images/rocket.png) no-repeat scroll -149px 0 transparent;
+		    display: none;
+		    height: 250px;
+		    opacity: 0;
+		    z-index: 1;
+		}
+		#scrollTop .level-3 {
+		    background: none repeat scroll 0 0 transparent;
+		    cursor: pointer;
+		    display: block;
+		    height: 150px;
+		    z-index: 2;
+		}
+		</style>
+		<div id="scrollTop">
+			<div class="level-2"></div>
+			<div class="level-3"></div>
+		</div>
+		<script>
+		$(function () {
+		/* 
+			 * 绑定window的scroll事件
+			 * 判断是否超过第一屏，此时出现小火箭
+			 * 点击回到顶部，小火箭通过定时器切换背景图模拟喷火状
+			 * 到达顶部埋标记，区别正常回顶还是点击小火箭回顶
+			 */
+			
+			// 获取元素， #scrollTop, level2, level3
+			var $scrollTop = $('#scrollTop');
+			var $level2 = $('.level-2');
+			var $level3 = $('.level-3');
+			
+			// 标记i和定时器timer
+			var i, timer = null;
+
+			// 获取窗口的高度
+			var winHeight = $(window).height();
+			
+			// 绑定window的scroll事件
+			$(window).on('scroll', function () {
+				
+				// 获取滚动的距离
+				var scrollTop = $(window).scrollTop();
+				
+				// 超出第一屏出现
+				if(scrollTop >= winHeight) {
+					
+					$scrollTop.show();
+					
+				// 判断i是否为0，被点击过就不隐藏
+				}else if (i == 0) {
+					$scrollTop.hide();
+				}
+				
+				// 回到顶部, 判断是否等于0
+				if(scrollTop == 0) {
+					//动画，延迟0.1秒执行，元素marginTop
+					$scrollTop.delay(100).animate({marginTop: -1000}, function () {
+						
+						//回调后样式重置为-125，隐藏
+						$(this).css({
+							'margin-top': -125,
+							'display': 'none',
+							'background-position': '0px 0px'
+						})
+						
+						// 返回操作标记i为0
+						i = 0;
+					});
+					
+				}	
+
+			})
+			
+			// 鼠标一上去渐显
+			$scrollTop.on('mouseover', function () {
+				$level2.show().animate({opacity: 1});
+			}).on('mouseout', function () {
+				$level2.hide().animate({opacity: 0});
+			})
+	
+			// 点击第三层	
+			$level3.on('click', function () {
+					
+					i = !0; // 让定时器重新运行
+					
+					if($level2.css('display') == 'none' && i == 0){
+						// 清除定时器
+						clearInterval(timer);
+						$scrollTop.css('background-position', '0 0');
+						return;
+					}
+					
+					// 设置外层的样式为准备状态
+					$scrollTop.css('background-position', '-149px 0');
+					
+					// 火箭的背景图切换，模拟喷火状
+					var st = function () {
+						
+						//声明一个t为背景定位的值
+						var t = $scrollTop.css('background-position');
+						
+						// 背景图片切换的判断
+						switch (t) {
+							case '-149px 0px':
+							$scrollTop.css('background-position', '-298px 0px');
+							break;
+							case '-298px 0px':
+							$scrollTop.css('background-position', '-447px 0px');
+							break;
+							case '-447px 0px':
+							$scrollTop.css('background-position', '-596px 0px');
+							break;
+							case '-596px 0px':
+							$scrollTop.css('background-position', '-745px 0px');
+							break;
+							case '-745px 0px':
+							$scrollTop.css('background-position', '-298px 0px');
+							break;
+						}
+					}
+					
+					// 定时器，通过图片切换来模拟喷火
+					timer = setInterval(st, 100);
+					
+					// 回到顶部
+					$('body').animate({scrollTop: 0},1000);
+					
+				})
+
+		});
+		</script>	
+	</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS3 动画</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+			font-family:'微软雅黑';
+		}	
+		html{
+			/*font-size:625%;*/
+		}
+		a{
+			text-decoration:none;
+		}
+		em, i {
+		    font-style: normal;
+		}		
+
+		ul{
+			list-style-type:none;
+		}
+		div,figure,figcaption {
+			box-sizing: border-box;   /*注意*/
+		}
+		.clear:after{
+			display:block;
+			content:'';
+			clear:both;
+			height:0px;
+		}
+		.header{
+			height:2.5rem;
+			line-height:2.5rem;
+			background:#000;
+			color:#fff;
+			text-align:center;
+			margin:0px auto;
+			width: 100%;
+			font-size: 1rem;
+		}
+		.content{
+			max-width:1024px;
+			margin:0px auto;
+		}
+		.focus{
+			width:100%;
+
+		}
+		.focus img{
+			width:100%;
+			height:100%;
+		}
+		.nav{
+		    width: 100%;
+		    margin: 0 auto;
+		    margin-bottom: 5.25rem;
+		    overflow: hidden;
+		    display: flex;
+		    flex-flow: row wrap;
+		}
+		.nav_top {
+	         width: 33.330%;
+	   		 border-bottom: 3px solid #f3f1f1;
+	   		 border-right: 3px solid #f3f1f1;
+	   		 box-sizing: border-box;
+	   		 
+		}
+		.nav_top:nth-child(3n){
+			border-right: 0;
+		}
+		.nav_top a {
+			display: block;
+			text-align: center;
+			padding-bottom: 1.375rem;
+		}
+
+		.nav i {
+		    display: block;
+		    color: #3a3838;
+		    font-size: 1rem;
+		}
+		.footer{
+			height:2.5rem;
+			line-height:2.5rem;
+			background:#000;
+			color:#fff;
+			text-align:center;
+			margin:0 auto;
+			width: 100%;
+			font-size: 1rem;
+		}
+		
+		/* 适配ipad以下的机型，主要是iphone6 plus */
+		@media (max-width: 767px) {
+			html{
+				font-size:16px;
+			}
+			
+			.nav_top img {
+				width:5rem;
+			}
+			
+			.nav_top i {
+				font-size: 0.85rem;
+			}
+		}
+		
+
+		
+		/* iphone6 */
+		@media (min-width: 375px) and (max-width: 413px) {
+			html {
+				font-size: 12px;
+			}
+		}
+
+
+		
+		/* iphone5 */
+		@media (max-width: 374px) {
+			html{
+				font-size: 10px;
+			}
+			
+			.nav_top img {
+				width:4rem;
+			}
+		}
+		
+		
+		/* 判断横竖屏 */
+		/*
+		 * landscape    横屏 
+		 * portrait     竖屏 
+		 */
+		
+		@media (orientation: portrait) {
+			.footer {
+				position:absolute;
+				bottom: 0;
+				left: 0;
+			}
+		}
+		
+	</style>
+</head>
+<body>
+	<header class="header">
+		千峰教育
+	</header>
+
+
+	<section class="content">
+
+		<div class="focus">
+			<img src="img/banner_3.jpg" alt="焦点图">
+		</div>
+		
+		<ul class="nav base">
+		   <li class="nav_top">
+		        <a href="http://wap.mobiletrain.org/php.html?">
+		            <img src="img/php_img.png">
+		            <i>PHP+大数据集群</i>
+		        </a>
+		   </li>
+		   <li class="nav_top">
+		        <a href="http://wap.mobiletrain.org/ui.html?">
+		            <img src="img/ui_img.png">
+		            <i>UI培训  轻松入门</i>
+		        </a>
+		    </li>
+		    <li class="nav_top">
+		        <a href="http://wap.mobiletrain.org/android.html?">
+		            <img src="img/an_img.png">
+		            <i>安卓课程  市场广</i>
+		        </a>
+		   </li>
+		   <li class="nav_top">
+		        <a onclick="window.open('http://tb.53kf.com/code/client/10132404/3','_blank')" href="?">
+		            <img src="img/java_img.png">
+		            <i>javaEE+大数据</i>
+		        </a>
+		    </li>
+		    <li class="nav_top">
+		        <a href="http://wap.mobiletrain.org/h5.html?">
+		            <img src="img/h5_img.png
+
+		            ">
+		            <i>HTML5课程<br>炫酷前端</i>
+		        </a>
+		    </li>
+		   	<li class="nav_top">
+		        <a href="http://wap.mobiletrain.org/ios.html?">
+		            <img src="img/ios_img.png">
+		            <i>iOS课程<br>高大上</i>
+		        </a>
+		   </li>		 
+		</ul>
+	</section>
+
+
+	<footer class="footer"> 
+		这是底部
+	</footer>
+</body>
+</html>

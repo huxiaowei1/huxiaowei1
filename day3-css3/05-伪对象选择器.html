@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>css3基础课程</title>
+		<script src="../js/jquery-3.1.0.min.js"></script>
+        <style type="text/css">
+        	*{
+        		margin:0;
+        		padding:0;
+        	}
+             body{
+                margin:0;
+                padding:0;
+                font-family:'微软雅黑';
+                background-color:#f7f7f7;
+            }
+
+            a{
+                color:#333;
+                font-size:24px;
+                text-decoration:none;
+            }
+
+            li{
+                line-height:40px;
+            }
+        
+
+            .content p:first-letter{   /*第一个字符 */
+                font-size:100px;
+                background: blue;
+            }
+
+
+            .content p::first-line{    /*设置第一行样式*/
+                background:blue;
+            }
+
+            /*鼠标选中的样式*/
+        	.content p::selection{   /* 注意：selection这个伪类前面一定要2个冒号 */
+               background:pink;               
+                color:blue;
+
+            }
+            
+            /*伪类清除浮动*/
+            .content:after {
+            	content: '.';
+            	clear: both;
+            	display: block;
+            	height:  0;
+            	overflow: hidden;
+            	/*visibility: hidden;*/
+            }
+            
+            .iphone {
+            	width: 150px;
+            	height: 50px;
+            	border-radius: 50px;
+            	background: green;
+            	position: relative;
+            	margin: 0 auto;
+            }
+            .iphone:before {
+				content: '';       /* 用上before和after伪类一定要加上content属性 */
+				width: 50px;
+				height: 50px;
+				border-radius: 50px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				background: gray;
+            }
+        </style>
+
+    </head>
+    <body>
+      
+
+      <div class="content">
+            <p>
+                               主要是运用在图片上，以实现一些特效。（尽管他们也能运用于video上），不过我们在些只来讨论图片上的运用。
+            </p>
+      </div>
+      <br><br>
+      
+      <!-- 模拟iphone开关 -->
+      <div class="iphone"></div>
+    </body>
+</html>

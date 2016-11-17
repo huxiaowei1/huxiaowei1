@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Untitled</title>
+        
+        <!--/*
+         * viewport  窗口设定
+         * width=device-width   监听设备宽度
+         * initial-scale        原始的缩放比例
+         * minimum-scale        最小的缩放比列
+         * maximum-scale        最大的缩放比列
+         */-->
+
+        <style>
+        	html {
+        		font-size: 24px;
+        	}
+			body{
+				padding: 0;
+				margin: 0;
+				font-family: "微软雅黑";
+			}
+            
+    		header{
+				height:3rem;
+				line-height:3rem;
+				background:#000;
+				color:#fff;
+				text-align:center;
+				margin:0px auto;
+				width: 100%;
+				font-size: 1.5rem;
+			}
+			
+			.content{
+				max-width:1024px;
+				margin:0px auto;
+			}
+			
+			nav {
+				overflow: hidden;
+			}
+			
+			nav li {
+		         width: 33.33334%;
+		   		 border-bottom: 3px solid #f3f1f1;
+		   		 border-right: 3px solid #f3f1f1;
+		   		 float:left;
+		   		 list-style: none;
+		   		 margin-left: -3px;
+		   		 height: 8rem;
+		   		 
+			}
+			nav li:nth-child(3n){
+				border-right: 0;
+			}
+			nav li a {
+				display: block;
+				text-align: center;
+				text-decoration: none;
+			}
+	
+			nav li i {
+			    display: block;
+			    color: #3a3838;
+			    font-size: 1rem;
+			    font-style: normal;   
+			}
+			
+			@media (max-width: 1024px) {
+				html{
+					font-size: 20px;
+				}
+				
+			}
+			
+			@media (max-width: 767px) {
+				html{
+					font-size: 16px;
+				}
+				
+				nav li img {
+					width: 4.8rem;
+				}
+				
+				nav li i {
+					font-size: 0.9rem;
+				}
+				
+			}
+			
+			@media (max-width: 413px) {
+				html {
+					font-size: 12px;
+				}
+				nav li{
+					height: 8.5rem;
+				}
+			}
+			
+			
+        </style>
+    </head>
+    <body>
+       <header>我是头部</header>
+       
+       <div class="content">
+	       <nav>
+			   <li>
+			        <a href="http://wap.mobiletrain.org/php.html?">
+			            <img src="img/php_img.png">
+			            <i>PHP+大数据集群</i>
+			        </a>
+			   </li>
+			   <li>
+			        <a href="http://wap.mobiletrain.org/ui.html?">
+			            <img src="img/ui_img.png">
+			            <i>UI培训  轻松入门</i>
+			        </a>
+			    </li>
+			    <li>
+			        <a href="http://wap.mobiletrain.org/android.html?">
+			            <img src="img/an_img.png">
+			            <i>安卓课程  市场广</i>
+			        </a>
+			   </li>
+			   <li>
+			        <a onclick="window.open('http://tb.53kf.com/code/client/10132404/3','_blank')" href="?">
+			            <img src="img/java_img.png">
+			            <i>javaEE+大数据</i>
+			        </a>
+			    </li>
+			    <li>
+			        <a href="http://wap.mobiletrain.org/h5.html?">
+			            <img src="img/h5_img.png
+	
+			            ">
+			            <i>HTML5课程<br>炫酷前端</i>
+			        </a>
+			    </li>
+			   	<li>
+			        <a href="http://wap.mobiletrain.org/ios.html?">
+			            <img src="img/ios_img.png">
+			            <i>iOS课程<br>高大上</i>
+			        </a>
+			   </li>		 
+			</nav>
+		</div>
+    </body>
+</html>

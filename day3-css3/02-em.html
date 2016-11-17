@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>css3基础课程</title>
+
+        <style type="text/css">
+        
+        	/* 
+        	 * %是分母为16px的换算
+        	 * em是继承父元素的长度大小
+        	 * rem是继承根元素html的长度大小
+        	 */
+        	
+        	html{
+                /*font-size:10px;*/    /*10px/16px*/
+               
+               /*font-size: 87.5%;*/         
+              
+              font-size: 15px;
+            }
+
+            .content p{
+                /*font-size:1.5em;   /* 15px */
+               
+               font-size: 1.8rem;
+            }
+
+            .content p span{
+                /*font-size:4em;   /*60px 相对于父亲节点*/
+               
+               font-size: 6rem;
+            }
+            
+            /* 解决chrome不能兼容12px的字体 */
+            /*.content div {
+            	transform: scale(0.8);
+            }*/
+        </style>
+        
+    </head>
+    <body>
+      <div class="content">
+      		<div>我是宝宝</div>
+      		<p><span>Bootstrap</span> 简洁、直观、强悍、移动设备优先的前端开发框架,让web开发更迅速 </p>
+      </div>
+    </body>
+</html>

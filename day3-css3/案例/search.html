@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>搜索过滤效果</title>
+	<style>
+		.namelist{
+			display:none;
+			height:400px;
+			width:200px;
+			padding:5px 10px;border:1px solid #ddd;overflow-y:auto;
+		}
+		.namelist li{margin: 10px 0;}
+	</style>
+	<script src="js/jquery-1.12.0.js"></script>
+	<!--<script>
+		$(function(){
+			var name = ['王育崇','周广','陈国荣','胡旭东','陈仁中','古志忠','秦立鑫','廖志勇','田雷','许隋立','郭锡辉','王锐','温智文','吕英华','徐蔚铭','李焯威','陈震','郭梦颖','张龙','尹国君','周志抄','陈家宇','熊丽平','杨冰','周桂浩','梁启鹏','吴超亮','郑永椒','张博文','张浩','夏龙旭','夏粤琳','陈锦','唐增祥','李辉','彭涛','邓东彩','姜浩','杨小明','熊犇','赖金荣','熊江林','程小权','李世华','林煌','王彦翔','张卓','饶家麒','谢进荣','张彩霞','张宇飞','余威龙'];
+
+			var $keyword = $('#keyword');
+			var $namelist = $keyword.next();
+
+			for(var i=0;i<name.length;i++){
+				var p = document.createElement('p');
+				$(p).html(name[i]);
+				$namelist[0].appendChild(p);
+			}
+
+			// 给输入框绑定点击事件
+			$keyword.focus(function(){
+				// 获得焦点时显示.namelist
+				$namelist.show();
+			}).blur(function(){
+				//失去焦点时隐藏.namelist
+				setTimeout(function(){
+					$namelist.hide();
+				},200);
+			}).keyup(function(){
+				// 获取输入的内容
+				var keyword = $keyword.val();
+
+				// 显示包含keyword的p标签，隐藏其他p标签
+				// 先隐藏所有p，然后显示包含keyword的p标签
+				$namelist.children('p').hide().filter('p:contains('+keyword+')').show();
+			});
+
+			// 给p标签绑定点击事件，点击时帮内容写入#keyword
+			$namelist.children('p').click(function(){
+				var currentName = $(this).html();
+
+				$keyword.val(currentName);
+			});
+		});-->
+	</script>
+</head>
+<body>
+	<h1>搜索过滤</h1>
+	<input type="text" id="keyword"><button id="btn">提交</button>
+	<ul class="namelist"></ul>
+</body>
+<script>
+//$(function (){
+
+	/*
+	 * 循环数组形成列表
+	 * 获得焦点的时候显示，失去焦点隐藏
+	 * 根据输入内容匹配结果
+	 */
+	
+//	var $keyWord = $('#keyword'), $nameList = $('.namelist');
+//	var $button = $('button');
+//	
+//	
+//	
+//	// 输入框获取焦点
+//	$keyWord.focus(function () {
+//		
+//		$.ajax({
+//			'url': 'json/search.json',
+//			'dataType': 'json',
+//			"success": function (data){
+//				var d = data.data;
+//				
+//				$.each(d, function (idx, ele) {
+//					$('<li/>').html(ele).appendTo($nameList);
+//				})
+//				
+//				$nameList.show();
+//				
+//			}
+//		})
+//		
+//	}).blur (function () {
+//		setTimeout(function() {
+//			$nameList.hide();
+//		}, 500)
+//	}).keyup(function () {
+//		var $keyVal = $keyWord.val();
+//		
+//		// 匹配下拉框的数据
+//		$nameList.children('li').hide().filter('li:contains(' + $keyVal + ')').show();
+//	})
+//	
+//	// 点击列表往输入框赋值
+//	$nameList.on('click', 'li', function () {
+//		$keyWord.val($(this).html());
+//	})
+//	
+//	
+//	$button.on('click', function () {
+//		var val =  $keyWord.val();
+//		
+//		if(val == ''){
+//			alert('搜索关键词不能为空，请重新输入！');
+//			return;
+//		}
+//		
+//		location.href = 'search-result.html?keyword=' + escape(val);
+//	})
+//	
+//})
+
+
+
+$(function () {
+	
+	// 获取页面元素
+	var $nameList = $('.namelist');
+	var $btn = $('#btn');
+	var $keyWord = $('#keyword');
+	
+	$keyWord.focus(function () {
+		$.ajax({
+			url:'json/search.json',
+			success: function (res) {
+				var d = res.data;
+				
+				var html = '';
+				$.each(d, function(idx, ele) {			
+					html += '<li>'+ele+'</li>';
+				});
+				
+				$nameList.html(html).show();
+				
+			}
+		})
+	}).blur(function () {
+		setTimeout(function () {$nameList.hide()}, 2000);
+	}).keyup(function () {
+		var val = $keyWord.val();
+		console.log(val);
+		$nameList.children('li').hide().filter('li:contains("'+val+'")').show();
+	})
+	
+	$nameList.click('click', 'li', function () {
+		$keyWord.val($(this).text());
+	})
+	
+	$btn.click(function () {
+		if($keyWord.val() == '') {
+			alert('请输入关键词！')
+		} else {
+			location.href = 'search-result.html?keyword=' +  escape($keyWord.val());
+		}
+	})
+	
+})
+
+</script>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>有一天，央视解说员齐聚一堂</title>
+	<style>
+		ul{list-style: none;padding:0;margin:0;}/*reset*/
+		#datalist{border:1px solid #ddd;padding:15px;overflow: hidden;}
+		#datalist li{padding:5px;border-bottom:1px dotted #ccc;margin-bottom:20px;float:left; text-align: center;}
+		#datalist ul{display: none;}
+		#page span{display:inline-block;margin:5px;width:40px;line-height:1.8;text-align: center;background-color:#dfdfdf;color:#666;}
+		#page span.active{background-color:#fc0;color:#fff;}
+	</style>
+	<script src="js/jquery-1.12.0.js"></script>
+	<!--<script>
+		$(function(){
+			
+			var urlParam = getUrlParam('keyword');
+			var keyWord = unescape(urlParam);
+				console.log(keyWord);
+			
+//			if (urlParam != '') {
+//				$.ajax({
+//					url: '/ajax/json/search-result.json',
+//					dataType: 'json',
+//					success: function (data) {
+//						var res = data.data;
+//						if (data.code == 200) {
+//							
+//							$.each(res, function(idx, ele) {
+//								
+//								if (ele.keyWord.indexOf(keyWord) >= 0){
+//									
+//									var eleData = ele.data;
+//									
+//									var _html = '';
+//									
+//									$.each(eleData, function(i,e) {
+////										var kArr = e.title.split(keyWord);
+//										_html += '<li>';
+//										_html += '<img src="' + e.pic + '">';
+//										_html += '<p>' + e.title.replace(keyWord,'<b style="color:red;">'+keyWord+'</b>') + '</p>';
+//										_html += '</li>';
+//									})
+//									$('#datalist').html(_html);
+//								}
+//								
+//							});
+//							
+//						}
+//					}
+//				})
+//			}
+			 
+			function getUrlParam(name) {
+	            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+	            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+	            if (r != null) return unescape(r[2]); return null; //返回参数值
+	        }
+		});
+	</script>-->
+</head>
+<body>
+	<h1>搜索结果：</h1>
+	<ul id="datalist">
+	</ul>
+</body>
+<script>
+//		$(function(){
+//			
+//			var keyWord = getUrlParam('keyword');
+//				console.log(keyWord);
+			
+//			if (keyWord != ''){
+//				$.ajax({
+//					'url': 'json/search-result.json',
+//					'dataType': 'json',
+//					'success': function (data) {
+//						var d = data.data;
+//						
+//						var index = 0;
+//						$.each(d, function (idx, ele){
+//
+//							if(ele.keyWord.indexOf(keyWord) >= 0) {
+//								console.log(1);
+//								var resData = ele.data;
+//								
+//								var _html = '';
+//								$.each(resData, function (i, e) {
+//									var titArr = e.title.split(keyWord);
+//
+//									_html += '<li>';
+//									_html += '<img src="images/'+e.pic+'">';
+//									_html += '<p>'+titArr[0] +'<b style="color:red">'+keyWord+'</b>'+titArr[1]+'</p>';
+//									_html += '</li>';
+//								})
+//								
+//								$('#datalist').append(_html);
+								
+//								index != 0;
+								
+//							}
+//	
+//						})
+//						console.log(index);
+//						
+//						if(index == 0){
+//							$('#datalist').remove();
+//							$('<p/>').html('对不起，找不到你要的结果！').appendTo('body');
+//						}
+//					}
+//				})
+//			}
+			 
+//			function getUrlParam(name) {
+//	            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+//	            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+//	            if (r != null) return unescape(r[2]); return null; //返回参数值
+//				
+//	        }
+//		});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	$(function () {
+		
+		var kw = getUrlParam('keyword');
+		
+		if(kw) {
+			$.ajax({
+				url: 'json/search-result.json',
+				success: function(data) {
+					var d = data.data;
+					
+					$.each(d, function(idx, ele) {
+						var kewWord = ele.keyWord;
+						if(kewWord.indexOf(kw) >= 0) {
+							
+							var eled = ele.data;
+							
+							var html = '';
+							$.each(eled, function(i, e){
+								var titArr = e.title.split(kewWord);
+								console.log(titArr);
+//								html += '<li><img src="images/' + e.pic + '"><p>' + e.title.replace(kw, '<b style="color:red">'+kw+'</b>') + '</p></li>';
+								html += '<li><img src="images/' + e.pic + '"><p>' + titArr[0] + '<b style="color:red">' + kw + '</b>'+ titArr[1] + '</p></li>';
+							})
+							
+							$('#datalist').html(html);
+						}
+					});
+				}
+			})
+		}
+		
+		function getUrlParam(name) {
+	            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+	            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+	            if (r != null) return unescape(r[2]); return null; //返回参数值
+				
+	        }
+	})
+	</script>
+</html>
