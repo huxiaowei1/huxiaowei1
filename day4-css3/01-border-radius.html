@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 边框</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+		}
+
+		.border-radius {
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			background-color: green;
+			
+			/* border-radius的值
+			 * 左上，右上，右下，左下
+			 * 2个值：左上右下，右上左下
+			 * 3个值： 左上，右上左下，右下
+			 * /
+			 
+			
+
+			/*border-radius: 50px 100px 50px;*/
+			
+			/*四个角都都是100px*/
+			/*border-radius: 100px;*/
+
+			/*表示1、3 是100px 2、4是50px*/
+			/*border-radius: 100px 50px;*/
+
+			/*表示1是100px 2、4是50px 3是80px*/
+			/*border-radius: 100px 50px 80px 20px;*/
+			/*border-radius: 100px 50px;*/
+			
+			/*border-radius: 100px 20px 50px;*/
+			/*border-radius: 100px;*/
+			/*border-radius: 50%;*/
+			
+			border-radius: 50%;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="border-radius"></div>
+</body>
+</html>

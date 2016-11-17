@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>css3基础课程</title>
+
+        <style type="text/css">
+            body {
+              margin: 0;
+              padding: 0;
+              font-family: '微软雅黑';           
+            }
+
+            .box{
+              width:200px;
+              height:200px;
+              margin:100px auto;
+              text-align: center;
+              line-height: 200px;
+              border: 1px solid #ddd;
+              /* 外阴影 */
+              box-shadow: -2px -2px 2px red;
+              /* 内阴影 */
+             /*box-shadow: 0 0 2px #666 inset;*/
+            }
+
+            .box img{
+               width:200px;
+               height:200px;
+            }
+            
+            /*列表展示外阴影*/
+            .list,
+            .list li{
+            	list-style: none;
+            }
+            /*.list:after{
+            	content: '.';
+            	height: 0;
+            	clear: both;
+            	display: block;
+            	/*overflow: hidden;*/
+            	/*visibility: hidden;*/
+            /*}*/
+           
+           .list {
+           	overflow: hidden;
+           }
+            .list li{
+            	float:left;
+            	width:150px;
+            	height:  200px;
+            	margin-right: 50px;
+            	text-align: center;
+            	border: 2px solid #000;
+            	box-shadow: 0 0 50px #f00 inset;
+            }
+            
+            .footer{
+            	/*border-top: 1px solid #ddd;*/
+            	padding: 50px 0;
+            	text-align: center;
+            	box-shadow: 0 0 10px #ddd;
+            }
+            
+            
+        </style>
+      
+    </head>
+    <body>        
+    	
+        <div class="box">大闹天竺</div>
+        
+        <!--内容区域--> 
+        <div class="content" style="height: 800px;">
+        	<ul class="list">
+        		<li><img src="images/img.jpg" width="150px"><p>aaaa</p></li>
+        		<li><img src="images/img.jpg" width="150px"><p>aaaa</p></li>
+        	</ul>
+        </div>
+        
+        <!--底部-->
+        <div class="footer">
+        	<div class="copyright">千锋互联</div>
+        </div>
+        
+    </body>
+</html>

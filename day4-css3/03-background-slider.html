@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>noTitle</title>
+		<meta charset="">
+		<link rel="stylesheet" href="">
+		<script type="text/javascript" src="js/jquery-1.12.0.js"></script>
+
+		<script>
+//		$(function () {
+
+			/* 
+			 * 获取背景定位分割成数组待循环
+			 * 设置定时器执行某个操作
+			 * 合并新的数组，重新赋值
+			*/
+
+//			// 获取元素
+//			$bg = $('#bg');
+//
+//			// 背景定位的值分割成数组
+//			var positionArr = $bg.css('background-position').split(',');
+//			var n = 0;  // 初始索引
+//
+//			// 设置定时器，隔2秒执行一次
+//			setInterval(function () {
+//
+//				n++;
+//
+//				// 最后一个重新回到起点
+//				if (n == positionArr.length) {
+//					n = 0;
+//				}
+//
+//				// 循环数组，得到索引重新赋值，bgPosition为0显示
+//				for (var i=0; i<positionArr.length; i++){
+//
+//					if (i == n) {
+//						positionArr[i] = '0 0';
+//					} else {
+//						positionArr[i] = '-500px -500px';
+//					}
+//
+//				}
+//
+//				// 合并数组，重新给bgPosition赋值
+//				$bg.css('background-position', positionArr.join(','));
+//
+//			},2000)
+//		})
+		</script>
+
+		<style>
+		  div#bg{
+		    width:200px;height:200px;
+			background-image:url(images/1.jpg),url(images/2.jpg),url(images/3.jpg);
+			background-repeat:no-repeat;
+			background-size:100% 100%,100% 100%,100% 100%;
+			background-position:0px 0px,-500px -500px,-500px -500px;
+		  }
+		</style>
+		
+	</head>
+	<body>
+		<div id="bg">
+			
+		</div>
+	</body>
+	
+	<script>
+
+		$(function () {
+			
+			// 获取元素
+			var $bg = $('#bg');
+			
+			var bpStr = $bg.css('background-position');
+			
+			var bpArr = bpStr.split(',');
+			
+			var n = 0;
+			setInterval(function () {
+				n++;
+				
+				if(n == bpArr.length) {
+					n = 0;
+				}
+				
+				for (var i=0; i<bpArr.length;i++){
+					
+					if (n == i) {
+						bpArr[i] = '0px 0px';
+					} else {
+						bpArr[i] = '-500px -500px';
+					}
+					
+				}
+				
+				var newbpStr = bpArr.join(',');
+			
+				$bg.css('background-position', newbpStr);
+				
+			},2000)
+			
+		})
+	</script>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>css3基础课程</title>
+
+        <style type="text/css">
+            body{
+            	font: 12px/1.5 "微软雅黑";
+            }
+            .test{
+                width:200px;
+                border:1px solid #ccc;
+                height:200px;
+				font: bold 18px/1 arial;
+				word-spacing:20px;
+				word-wrap: break-word;
+            }
+			
+			.text-overflow{
+				width:200px; 
+				border:1px solid #000000;
+				color: #00f;	
+				height: 100px;	
+				/*white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;		*/
+			}
+        </style>
+      
+    </head>
+    <body>   
+
+        <!--<p class="test" id="test">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p><br>
+        
+        <p class="text-overflow" id="textOverflow">王宝强拍的大闹天竺出品人写马蓉我不会去看,王宝强拍的大闹天竺出品人写马蓉我不会去看,王宝强拍的大闹天竺出品人写马蓉我不会去看</p>-->
+		
+		<style>
+			ul {
+				width: 300px;
+				border: 1px solid #000;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			li {
+				overflow: hidden;
+				list-style: none;
+				padding: 10px;
+			}
+			li .l {
+				float: left;
+				width: 150px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			li .r{
+				float: right;
+			}
+		</style>
+		<ul>
+			<li>
+				<a href="" class="l" title="今天的新闻是吃啥？今天的新闻是吃啥？今天的新闻是吃啥？今天的新闻是吃啥？">今天的新闻是吃啥？今天的新闻是吃啥？今天的新闻是吃啥？今天的新闻是吃啥？</a>
+				<span class="r">2016-11-3</span>
+			</li>
+			<li>
+				<a href="" class="l" title="今天的新闻是吃啥？今天的新闻是吃啥？今天的新闻是吃啥？今天的新闻是吃啥？">今天的新闻是吃啥？今天的新闻是吃啥？今天的新闻是吃啥？今天的新闻是吃啥？</a>
+				<span class="r">2016-11-3</span>
+			</li>
+			<li>
+				<a href="" class="l" title="今天的新闻是吃啥？今天的新闻是吃啥？今天的新闻是吃啥？今天的新闻是吃啥？">今天的新闻是吃啥？今天的新闻是吃啥？今天的新闻是吃啥？今天的新闻是吃啥？</a>
+				<span class="r">2016-11-3</span>
+			</li>
+		</ul>
+		
+		<!--<script>
+			// 获取元素
+			var overflow = document.getElementById('textOverflow');
+			
+			// 获取文本
+			var txt = overflow.innerHTML;
+			
+			// 字符截取， substr第一个值是开始的位置，第二个值是长度
+			txt = txt.substr(0, 30);
+			
+			overflow.innerHTML = txt + '...';
+		</script>-->
+		
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>css3基础课程</title>
+		<script src="../js/jquery-1.12.0.js"></script>
+        <style type="text/css">
+        	body{
+        		/*background: #f00;*/
+        	}
+            .p1{
+                width:100px;
+                /*以下三个属性是标配, 缺一不可*/
+                white-space:nowrap;   /*强制不换行*/
+                overflow:hidden;
+                text-overflow:ellipsis;   /*超出显示几个点*/
+
+            }
+            
+            .p2 {
+            	width: 200px;
+            	border: 1px solid #ddd;
+            }
+
+            .p3{
+                font-size:80px;
+                color:#000;
+                /*background:#000;*/
+                
+                /*
+                 * 1.水平方向    正数 向右   负数  向左
+                 * 2.垂直方向    正数 向下   负数  向上
+                 * 3.模糊度       数值过大会完全扩散
+                 * 4.色值
+                */
+                text-shadow:2px 2px 5px #666;
+            }
+             /*uppercase:大写
+             lowercase:小写
+             capitalize:首字母大写*/
+            p.uppercase {text-transform: uppercase}
+            p.lowercase {text-transform: lowercase}
+            p.capitalize {text-transform: capitalize}
+        </style>
+      
+    </head>
+    <body>        
+        <!--<p class="p1">打破国产保护月 中国资本正影响进口片票房？</p>
+
+        <p class="p2" id="substr">打破国产保护月 中国资本正影响进口片票房打破国产保护月 中国资本正影响进口片票房打破国产保护月 中国资本正影响进口片票房打破国产保护月 中国资本正影响进口片票房打破国产保护月 中国资本正影响进口片票房？</p>-->
+
+
+        <!--<p class="p3">学习前端很轻松</p>-->
+        
+        <p class="uppercase">wo shi lai ceshi de</p>
+        <p class="lowercase">WO SHI lai ceshi de</p>
+        <p class="capitalize">wo shi lai ceshi de</p>
+        
+    </body>
+    
+    <!--<script>
+    	$(function () {
+    		var txt = $('#substr').html();
+    		
+    		var strTxt = txt.substr(0, 42);
+    		
+    		$('#substr').html(strTxt + '...');
+    	})
+    </script>-->
+</html>

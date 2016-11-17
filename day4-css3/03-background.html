@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>css3基础课程</title>
+
+        <style type="text/css">
+            body {
+              margin: 0;
+              padding: 0;
+              font-family: '微软雅黑';
+           
+            }
+
+    	.box {
+    		width:  400px;
+    		height:  400px;
+    		border: 20px solid rgba(255, 0, 0, 0.2);
+    		padding: 30px;
+    		margin:  50px;
+    		
+    		
+    		/*背景定位*/
+    		/*background-position: 20px 20px, 100px 100px, 100px 0;*/
+    		/*background-position: left top, center center, 50% 100%;
+    		background-size: 50% 50%, 100px 50px, 100px 100px;*/
+    		
+    		/*普通背景*/
+    		/*background-image: url('images/bg_flower.gif');*/
+    		/*background-position: 100px 100px;*/
+    		
+    		/* 多背景 */
+    		/*background-image: url('images/bg_flower.gif'),url('images/img.jpg'), url('images/share1.png');
+    		background-position: 0 0, 100px 100px, 200px 200px;
+    		background-size: 50px 50px, 100px 100px, 200px 200px;
+    		background-repeat: no-repeat;*/
+    		
+    		/* 背景基准点 */
+    		background-image: url('images/bg_flower.gif');
+    		background-repeat: no-repeat;
+    		background-origin:border-box;
+    		/*background-origin: content-box; /* 内容区域 */
+    		/*background-origin: padding-box;   /* 内边距区域 */
+    		/*background-origin: border-box;      /* 边框区域 */*/
+    		
+    	}   
+            
+            
+        </style>
+      
+    </head>
+    <body>        
+        <div class="box">
+          	你知道我在等你吗？？？？？？？你知道我在等你吗？？？？？？？你知道我在等你吗？？？？？？？你知道我在等你吗？？？？？？？你知道我在等你吗？？？？？？？
+        </div>
+    </body>
+</html>

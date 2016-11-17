@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>css3商品图条纹</title>
+        <style type="text/css">
+        ul, li {
+          list-style: none;
+        }
+        .product-list li {
+          float: left;
+          width: 220px;
+          padding: 15px;
+          margin-right: 15px;
+          position: relative;
+        }
+        .product-list img {
+          position: relative;
+          width: 220px;        
+        }
+        .product-hover {
+          position: absolute;          
+          left: 0;
+          top: 0;        
+          right: 0;
+          bottom: 0;
+          background-image: linear-gradient(45deg, #efefef 0%, #efefef 25%, transparent 25%, transparent 50%, #efefef 50%, #efefef 75%, transparent 75%, transparent 100%);
+          background-size: 30px 30px;
+          animation: gradientAn 1s linear infinite;
+          opacity: 0;
+          /*transition: opacity 0.2s linear;*/
+        }
+        li:hover .product-hover {
+          opacity: 1;
+        }
+
+        @keyframes gradientAn {
+          0%{
+            background-position: 0 0;
+          }
+          100%{
+            background-position: 60px 30px;
+          }
+        }
+        </style>
+      
+    </head>
+    
+    <body>        
+        <ul class="product-list">
+          <li>          	
+            <div class="product-hover"></div>
+            <img src="../images/p1.jpg">
+          </li>
+          <li>
+            <div class="product-hover"></div>
+            <img src="../images/p2.jpg">
+          </li>
+          <li>
+            <div class="product-hover"></div>
+            <img src="../images/p3.jpg">
+          </li>
+          <li>
+            <div class="product-hover"></div>
+            <img src="../images/p4.jpg">
+          </li>
+          <li>
+            <div class="product-hover"></div>
+            <img src="../images/p5.jpg">
+          </li>
+        </ul>
+    </body>
+    
+</html>

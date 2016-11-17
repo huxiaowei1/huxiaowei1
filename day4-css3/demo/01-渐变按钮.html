@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 渐变</title>
+	<style>
+		html, body {
+			height: 100%;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #f8fcd4;
+			/*制作背景渐变效果*/
+			background-image: linear-gradient(
+				to bottom,
+				#f8fcd4 20%,
+				#dbfacb 100%
+			);
+		}
+
+		.nav {
+			width: 800px;
+			text-align: center;
+			padding-top: 50px;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+
+		.nav a{
+			float: left;
+			width: 100px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			border: 1px solid #ddd;
+			text-decoration: none;
+			font-size:18px;
+			color: #666;
+			margin-right: -1px;
+            background-image:linear-gradient(to bottom, #aaa, #efefef);
+		}
+		
+		.nav a:hover{
+			color: #f00;
+            background-image:linear-gradient(to bottom, #666, #aaa);
+		}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<a href="javascript:;">refresh</a>
+		<a href="javascript:;">shuffle</a>
+		<a href="javascript:;">preview</a>
+		<a href="javascript:;">tea</a>
+		<a href="javascript:;">wifi</a>
+		<a href="javascript:;">locator</a>
+	</div>
+</body>
+</html>

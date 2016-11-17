@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3颜色和透明度</title>
+	<style>
+		html, body {
+			background: url('images/huaban.jpg') left top no-repeat;
+			margin: 0;
+			padding: 0;
+			/* rgba
+			 * r = red
+			 * g = green
+			 * b = blue
+			 * a = alpha
+			 */
+			
+			/*background:#000;
+			opacity: 0.5;*/
+		}
+		body{
+			height: 1000px;
+		}
+
+		/*.bg{
+			background:#000;
+			/*opacity: 0.5;*/
+			/*width:200px;
+			height:200px;
+			
+		}*/
+		/*.bg span{
+			display: block;
+			width: 100px;
+			height: 100px;
+			background: #f00;
+		}*/
+		
+		/*遮罩层*/
+		.mask {
+			background: rgba(0, 0, 0, 0.3);
+			position: fixed;
+			left: 0;
+			top:0;
+			width: 100%;
+			height: 100%;
+		}
+
+		/*图片居中*/
+		.pic{
+			position: fixed;
+			left: 50%;
+			top: 50%;
+			margin: -210px 0 0 -257px;
+			z-index: 1;
+		}
+	</style>
+</head>
+<body>
+	
+	<!--<div id="bg">
+		<span>这个一个被继承了透明度的box</span>
+	</div>-->
+	<img src="images/layer.jpg" class="pic">
+	<div class="mask"> <!--E 遮罩层 --> </div>
+	
+</body>
+</html>

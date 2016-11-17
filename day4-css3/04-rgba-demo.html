@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>css3基础课程</title>
+
+        <style type="text/css">
+
+            
+            /*
+
+              rgba
+              r red  红   0-255
+              g green 绿   0-255
+              b  blue   蓝色  0-255
+              a 表示透明度   0~1    0完全透明   1不透明
+              
+            */
+        *{
+          margin:0px;
+          padding:0px;
+        }
+         
+
+         .item{
+            width:230px;
+            position:relative;
+         }
+          .item img{
+            width:230px;
+          }
+
+        .item p{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 210px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 10px;
+            display: none;
+         }
+         .item:hover p {
+         	display: block;
+         }
+        </style>
+      
+    </head>
+    <body>
+         <div class="item">
+           <img src="images/p1.jpg" alt="老师">
+           <p>继1998年后武汉码头再立“生死牌”：堤在人在</p>
+         </div>
+    </body>
+</html>

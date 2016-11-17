@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 渐变</title>
+	<style>
+		html, body {
+			height: 100%;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			background-color: #f8fcd4;
+			/*制作背景渐变效果*/
+			background:#000;
+		}
+
+		.btn{
+			width: 150px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			border: 1px solid #0048cc;
+			text-decoration: none;
+			font-size:18px;
+			color: #333;
+			border-radius: 3px;
+			display: inline-block;
+			margin-top: 200px;
+            background:linear-gradient(to top, #0048cc, #0083cc);
+		}
+		
+		.btn:hover{
+            background:linear-gradient(to top, #0048cc, #07699f);
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<a href="javascript:;" class="btn">渐变按钮</a>
+	</div>
+</body>
+</html>
